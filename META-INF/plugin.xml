@@ -2,9 +2,7 @@
     <name>Builder Generator</name>
     <description>
         <![CDATA[
-         Adds ability to generate builder for a class and switch between them.
-         Switching between builder and source class is similar to 'Go To Test' action.
-         Generated builder class does not use reflection, only setter methods or constructor.
+         Adds ability to generate Atom for a class and switch between them.
          Usage:
           <ul>
               <li>ALT+SHIFT+B inside a class.</li>
@@ -14,100 +12,11 @@
     <version>1.1.5</version>
     <change-notes>
         <![CDATA[
-           version 1.1.5
+           version 0.5.0
            <br/>
            <ul>
-           <li>Added ability to generate builder using a single field (the object to be built itself) instead of all fields of the object to be built
-           <a href="https://github.com/mjedynak/builder-generator-idea-plugin/issues/37">(issue #37)</a>
-           (contribution by <a href="https://github.com/mkickax">mkickax</a>)</li>
+           <li>Init version</li>
            </li>
-           </ul>
-           version 1.1.4
-           <br/>
-           <ul>
-           <li>Ignore serialVersionUID field <a href="https://github.com/mjedynak/builder-generator-idea-plugin/issues/31">(issue #31)</a></li>
-           </ul>
-           version 1.1.3
-           <br/>
-           <ul>
-           <li>Fix incompatibility with IntelliJ 2017.1 <a href="https://github.com/mjedynak/builder-generator-idea-plugin/issues/33">(issue #33)</a></li>
-           </ul>
-           version 1.1.2
-           <br/>
-           <ul>
-           <li>Inner builder is able to assign fields without constructor or setter <a href="https://github.com/mjedynak/builder-generator-idea-plugin/issues/11">(issue #11)</a>
-           (contribution by <a href="https://github.com/blindpirate">blindpirate</a>)</li>
-           </ul>
-           version 1.1.1
-           <br/>
-           <ul>
-           <li>'but' method is now optional and disabled by default (issue #23)</li>
-           <li>Generated builder class is final (issue #24)</li>
-           <li>Added possibility to find inner builder</li>
-           </ul>
-           version 1.1.0
-           <br/>
-           <ul>
-           <li>Added possibility to generate builder as inner class (issue #13)</li>
-           </ul>
-           version 1.0.11
-           <br/>
-           <ul>
-           <li>Added 'but' method generation (issue #10)</li>
-           <li>Fix for deadlock on startup (issue #12)</li>
-           <li>Fix for method name generation (issue #14)</li>
-           </ul>
-           version 1.0.10
-           <br/>
-           <ul>
-           <li>Support for Code Style field and parameter prefixes (issue #9)</li>
-           </ul>
-           version 1.0.9
-           <br/>
-           <ul>
-           <li>Added customizable prefix for builder method (contribution by Bjorn Monnens)</li>
-           </ul>
-           version 1.0.8
-           <br/>
-           <ul>
-           <li>Comments are no longer copied when creating builder(issue #5)</li>
-           <li>Compiled for Java 6 (issue #6)</li>
-           </ul>
-           version 1.0.7
-           <br/>
-           <ul>
-           <li>Attempt to fix a bug that caused deadlock during IDEA startup (issue #4)</li>
-           </ul>
-           version 1.0.6
-           <br/>
-           <ul>
-           <li>Fixed bug that prevented generating builder in multimodule project</li>
-           </ul>
-           version 1.0.5
-           <br/>
-           <ul>
-           <li>Added action to 'Navigate' menu (can be easier found in 'Find Action' box)</li>
-           </ul>
-           version 1.0.4
-           <br/>
-           <ul>
-           <li>Fixed bug that prevented generating builder for class that was added as a project dependency</li>
-           </ul>
-           version 1.0.3
-           <br/>
-           <ul>
-           <li>Added ability to create builder for class with fields initialized in constructor</li>
-           </ul>
-           version 1.0.2
-           <br/>
-           <ul>
-           <li>Updated for IDEA 11.0</li>
-           </ul>
-           version 1.0.1
-           <br/>
-           <ul>
-           <li>Annotations of fields are now ignored when creating a builder</li>
-           <li>Source class in builder is no longer a field, but a local variable in build() method</li>
            </ul>
          ]]>
     </change-notes>

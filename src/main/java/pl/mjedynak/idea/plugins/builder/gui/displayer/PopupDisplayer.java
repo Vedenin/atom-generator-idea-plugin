@@ -8,7 +8,7 @@ import javax.swing.JList;
 
 public class PopupDisplayer {
 
-    static final String TITLE = "Builder not found";
+    static final String TITLE = "Builder not found 222 ";
 
     private PopupChooserBuilderFactory popupChooserBuilderFactory;
 
