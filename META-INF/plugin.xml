@@ -1,5 +1,5 @@
 <idea-plugin url="https://github.com/mjedynak/Builder-Generator">
-    <name>Builder Generator</name>
+    <name>Atom Generator</name>
     <description>
         <![CDATA[
          Adds ability to generate Atom for a class and switch between them.
@@ -9,7 +9,7 @@
           </ul>
         ]]>
     </description>
-    <version>1.1.5</version>
+    <version>0.5.0</version>
     <change-notes>
         <![CDATA[
            version 0.5.0
@@ -21,7 +21,7 @@
          ]]>
     </change-notes>
 
-    <vendor email="m.jedynak [at] gmail.com">Michal Jedynak
+    <vendor email="vedenin1980 [at] gmail.com">Viacheslav Vedenin
     </vendor>
     <idea-version since-build="171.4249.39"/>
 
@@ -32,7 +32,7 @@
     </project-components>
 
     <actions>
-        <action id="GoToBuilder" class="pl.mjedynak.idea.plugins.builder.action.GoToBuilderAction"
+        <action id="GoToBuilder" class="GoToBuilderAction"
                 text="Builder" description="Generates Builder">
             <add-to-group group-id="GoToCodeGroup" anchor="after" relative-to-action="GotoTest"/>
             <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>
