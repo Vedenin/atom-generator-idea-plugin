@@ -16,31 +16,25 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiPackage;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@RequiredArgsConstructor
+@Setter
 public class DisplayChoosersRunnable implements Runnable {
 
     private PsiClass psiClassFromEditor;
     private Project project;
     private Editor editor;
-    private PsiHelper psiHelper;
-    private CreateBuilderDialogFactory createBuilderDialogFactory;
-    private PsiFieldSelector psiFieldSelector;
-    private MemberChooserDialogFactory memberChooserDialogFactory;
-    private BuilderWriter builderWriter;
-    private PsiFieldsForBuilderFactory psiFieldsForBuilderFactory;
+    private final PsiHelper psiHelper;
+    private final CreateBuilderDialogFactory createBuilderDialogFactory;
+    private final PsiFieldSelector psiFieldSelector;
+    private final MemberChooserDialogFactory memberChooserDialogFactory;
+    private final BuilderWriter builderWriter;
+    private final PsiFieldsForBuilderFactory psiFieldsForBuilderFactory;
 
-    public DisplayChoosersRunnable(PsiHelper psiHelper, CreateBuilderDialogFactory createBuilderDialogFactory,
-                                   PsiFieldSelector psiFieldSelector, MemberChooserDialogFactory memberChooserDialogFactory,
-                                   BuilderWriter builderWriter, PsiFieldsForBuilderFactory psiFieldsForBuilderFactory) {
-        this.psiHelper = psiHelper;
-        this.createBuilderDialogFactory = createBuilderDialogFactory;
-        this.psiFieldSelector = psiFieldSelector;
-        this.memberChooserDialogFactory = memberChooserDialogFactory;
-        this.builderWriter = builderWriter;
-        this.psiFieldsForBuilderFactory = psiFieldsForBuilderFactory;
-    }
 
     @Override
     public void run() {
@@ -82,15 +76,4 @@ public class DisplayChoosersRunnable implements Runnable {
         return psiFieldSelector.selectFieldsToIncludeInBuilder(clazz, innerBuilder, useSingleField, hasButMethod);
     }
 
-    public void setPsiClassFromEditor(PsiClass psiClassFromEditor) {
-        this.psiClassFromEditor = psiClassFromEditor;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-    public void setEditor(Editor editor) {
-        this.editor = editor;
-    }
 }

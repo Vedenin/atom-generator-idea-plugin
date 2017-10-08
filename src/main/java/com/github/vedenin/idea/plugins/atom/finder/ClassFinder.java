@@ -5,14 +5,12 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiShortNamesCache;
 import com.github.vedenin.idea.plugins.atom.psi.PsiHelper;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class ClassFinder {
 
-    private PsiHelper psiHelper;
-
-    public ClassFinder(PsiHelper psiHelper) {
-        this.psiHelper = psiHelper;
-    }
+    private final PsiHelper psiHelper;
 
     public PsiClass findClass(String pattern, Project project) {
         PsiClass result;

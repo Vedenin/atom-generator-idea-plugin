@@ -79,18 +79,18 @@ public class PsiFieldVerifier {
         return result;
     }
 
-    private boolean methodIsNotPrivate(PsiMethod method) {
-        PsiModifierList modifierList = method.getModifierList();
-        return modifierListHasNoPrivateModifier(modifierList);
-    }
-
     private boolean methodHaProperPrefixAndProperName(PsiField psiField, PsiMethod method, String prefix) {
         String fieldNamePrefix = codeStyleSettings.getFieldNamePrefix();
         String fieldNameWithoutPrefix = psiField.getName().replace(fieldNamePrefix, EMPTY);
         return method.getName().equals(prefix + WordUtils.capitalize(fieldNameWithoutPrefix));
     }
 
-    private boolean modifierListHasNoPrivateModifier(PsiModifierList modifierList) {
+    private static boolean methodIsNotPrivate(PsiMethod method) {
+        PsiModifierList modifierList = method.getModifierList();
+        return modifierListHasNoPrivateModifier(modifierList);
+    }
+
+    private static boolean modifierListHasNoPrivateModifier(PsiModifierList modifierList) {
         return !modifierList.hasExplicitModifier(PRIVATE_MODIFIER);
     }
 

@@ -11,28 +11,19 @@ import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.github.vedenin.idea.plugins.atom.factory.PopupListFactory;
+import lombok.RequiredArgsConstructor;
 
 import javax.swing.JList;
 
-
+@RequiredArgsConstructor
 public class GoToBuilderActionHandler extends EditorActionHandler {
 
-    private PsiHelper psiHelper;
-    private BuilderVerifier builderVerifier;
-    private BuilderFinder builderFinder;
-    private PopupDisplayer popupDisplayer;
-    private PopupListFactory popupListFactory;
-    private DisplayChoosersRunnable displayChoosersRunnable;
-
-    public GoToBuilderActionHandler(PsiHelper psiHelper, BuilderVerifier builderVerifier, BuilderFinder builderFinder, PopupDisplayer popupDisplayer,
-                                    PopupListFactory popupListFactory, DisplayChoosersRunnable displayChoosersRunnable) {
-        this.psiHelper = psiHelper;
-        this.builderVerifier = builderVerifier;
-        this.builderFinder = builderFinder;
-        this.popupDisplayer = popupDisplayer;
-        this.popupListFactory = popupListFactory;
-        this.displayChoosersRunnable = displayChoosersRunnable;
-    }
+    private final PsiHelper psiHelper;
+    private final BuilderVerifier builderVerifier;
+    private final BuilderFinder builderFinder;
+    private final PopupDisplayer popupDisplayer;
+    private final PopupListFactory popupListFactory;
+    private final DisplayChoosersRunnable displayChoosersRunnable;
 
     @Override
     public void execute(Editor editor, DataContext dataContext) {

@@ -6,23 +6,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiPackage;
 import com.intellij.ui.ReferenceEditorComboWithBrowseButton;
 import com.github.vedenin.idea.plugins.atom.factory.PackageChooserDialogFactory;
+import lombok.RequiredArgsConstructor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@RequiredArgsConstructor
 public class ChooserDisplayerActionListener implements ActionListener {
+    private final ReferenceEditorComboWithBrowseButton comboWithBrowseButton;
+    private final PackageChooserDialogFactory packageChooserDialogFactory;
+    private final Project project;
 
-    private ReferenceEditorComboWithBrowseButton comboWithBrowseButton;
-
-    private PackageChooserDialogFactory packageChooserDialogFactory;
-
-    private Project project;
-
-    public ChooserDisplayerActionListener(ReferenceEditorComboWithBrowseButton comboWithBrowseButton, PackageChooserDialogFactory packageChooserDialogFactory, Project project) {
-        this.comboWithBrowseButton = comboWithBrowseButton;
-        this.packageChooserDialogFactory = packageChooserDialogFactory;
-        this.project = project;
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

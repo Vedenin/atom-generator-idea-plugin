@@ -9,18 +9,15 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.IncorrectOperationException;
 import com.github.vedenin.idea.plugins.atom.gui.helper.GuiHelper;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 class BuilderWriterComputable implements Computable<PsiElement> {
 
     private GuiHelper guiHelper = new GuiHelper();
     private PsiHelper psiHelper = new PsiHelper();
-    private BuilderPsiClassBuilder builderPsiClassBuilder;
-    private BuilderContext context;
-
-    BuilderWriterComputable(BuilderPsiClassBuilder builderPsiClassBuilder, BuilderContext context) {
-        this.builderPsiClassBuilder = builderPsiClassBuilder;
-        this.context = context;
-    }
+    private final BuilderPsiClassBuilder builderPsiClassBuilder;
+    private final BuilderContext context;
 
     @Override
     public PsiElement compute() {
@@ -67,7 +64,7 @@ class BuilderWriterComputable implements Computable<PsiElement> {
     }
 
     private void addButMethodIfNecessary(BuilderContext context, BuilderPsiClassBuilder builder) {
-        if (context.hasButMethod()) {
+        if (context.isHasButMethod()) {
             builder.withButMethod();
         }
     }

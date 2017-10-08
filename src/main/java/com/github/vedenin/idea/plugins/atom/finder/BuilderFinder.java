@@ -1,17 +1,15 @@
 package com.github.vedenin.idea.plugins.atom.finder;
 
 import com.intellij.psi.PsiClass;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class BuilderFinder {
 
     static final String SEARCH_PATTERN = "Builder";
-    public static final String EMPTY_STRING = "";
+    private static final String EMPTY_STRING = "";
 
-    private ClassFinder classFinder;
-
-    public BuilderFinder(ClassFinder classFinder) {
-        this.classFinder = classFinder;
-    }
+    private final ClassFinder classFinder;
 
     public PsiClass findBuilderForClass(PsiClass psiClass) {
         PsiClass innerBuilderClass = tryFindInnerBuilder(psiClass);
@@ -21,18 +19,6 @@ public class BuilderFinder {
             String searchName = psiClass.getName() + SEARCH_PATTERN;
             return findClass(psiClass, searchName);
         }
-    }
-
-    private PsiClass tryFindInnerBuilder(PsiClass psiClass) {
-        PsiClass innerBuilderClass = null;
-        PsiClass[] allInnerClasses = psiClass.getAllInnerClasses();
-        for (PsiClass innerClass : allInnerClasses) {
-            if (innerClass.getName().contains(SEARCH_PATTERN)) {
-                innerBuilderClass = innerClass;
-                break;
-            }
-        }
-        return innerBuilderClass;
     }
 
     public PsiClass findClassForBuilder(PsiClass psiClass) {
@@ -48,7 +34,19 @@ public class BuilderFinder {
         return result;
     }
 
-    private boolean typeIsCorrect(PsiClass psiClass) {
+    private static PsiClass tryFindInnerBuilder(PsiClass psiClass) {
+        PsiClass innerBuilderClass = null;
+        PsiClass[] allInnerClasses = psiClass.getAllInnerClasses();
+        for (PsiClass innerClass : allInnerClasses) {
+            if (innerClass.getName().contains(SEARCH_PATTERN)) {
+                innerBuilderClass = innerClass;
+                break;
+            }
+        }
+        return innerBuilderClass;
+    }
+
+    private static boolean typeIsCorrect(PsiClass psiClass) {
         return !psiClass.isAnnotationType() && !psiClass.isEnum() && !psiClass.isInterface();
     }
 }

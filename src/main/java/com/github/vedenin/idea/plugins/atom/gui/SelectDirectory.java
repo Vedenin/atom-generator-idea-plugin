@@ -8,26 +8,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.util.IncorrectOperationException;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class SelectDirectory implements Runnable {
 
-    private CreateBuilderDialog createBuilderDialog;
-    private PsiHelper psiHelper;
-    private GuiHelper guiHelper;
-    private Project project;
-    private Module module;
-    private String packageName;
-    private String className;
+    private final CreateBuilderDialog createBuilderDialog;
+    private final PsiHelper psiHelper;
+    private final GuiHelper guiHelper;
+    private final Project project;
+    private final Module module;
+    private final String packageName;
+    private final String className;
 
-    public SelectDirectory(CreateBuilderDialog createBuilderDialog, PsiHelper psiHelper, GuiHelper guiHelper, Project project, Module module, String packageName, String className) {
-        this.createBuilderDialog = createBuilderDialog;
-        this.psiHelper = psiHelper;
-        this.guiHelper = guiHelper;
-        this.project = project;
-        this.module = module;
-        this.packageName = packageName;
-        this.className = className;
-    }
 
     @Override
     public void run() {

@@ -6,17 +6,15 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiField;
 import com.github.vedenin.idea.plugins.atom.psi.model.PsiFieldsForBuilder;
 import com.github.vedenin.idea.plugins.atom.verifier.PsiFieldVerifier;
+import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RequiredArgsConstructor
 public class PsiFieldsForBuilderFactory {
 
-    private PsiFieldVerifier psiFieldVerifier;
-
-    public PsiFieldsForBuilderFactory(PsiFieldVerifier psiFieldVerifier) {
-        this.psiFieldVerifier = psiFieldVerifier;
-    }
+    private final PsiFieldVerifier psiFieldVerifier;
 
     public PsiFieldsForBuilder createPsiFieldsForBuilder(List<PsiElementClassMember> psiElementClassMembers, PsiClass psiClass) {
         List<PsiField> psiFieldsForSetters = new ArrayList<PsiField>();

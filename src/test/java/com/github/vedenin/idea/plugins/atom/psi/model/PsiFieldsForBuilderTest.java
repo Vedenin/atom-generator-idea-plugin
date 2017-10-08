@@ -39,22 +39,4 @@ public class PsiFieldsForBuilderTest {
         assertThat(psiFieldsForBuilder.getFieldsForConstructor()).isEqualTo(psiFieldsForConstructor);
         assertThat(psiFieldsForBuilder.getAllSelectedFields()).isEqualTo(allSelectedPsiFields);
     }
-
-    @Test(expected = UnsupportedOperationException.class)
-    public void shouldThrowExceptionWhenTryingToModifySettersList() {
-        // given
-        List<PsiField> fieldsForSetters = psiFieldsForBuilder.getFieldsForSetters();
-
-        // when
-        fieldsForSetters.remove(0);
-    }
-
-    @Test(expected = UnsupportedOperationException.class)
-    public void shouldThrowExceptionWhenTryingToModifyConstructorList() {
-        // given
-        List<PsiField> fieldsForConstructor = psiFieldsForBuilder.getFieldsForConstructor();
-
-        // when
-        fieldsForConstructor.remove(0);
-    }
 }

@@ -4,18 +4,15 @@ import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
 import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class MethodCreator {
 
     private CodeStyleSettings codeStyleSettings = new CodeStyleSettings();
     private MethodNameCreator methodNameCreator = new MethodNameCreator();
-    private PsiElementFactory elementFactory;
-    private String builderClassName;
-
-    public MethodCreator(PsiElementFactory elementFactory, String builderClassName) {
-        this.elementFactory = elementFactory;
-        this.builderClassName = builderClassName;
-    }
+    private final PsiElementFactory elementFactory;
+    private final String builderClassName;
 
     public PsiMethod createMethod(PsiField psiField, String methodPrefix, String srcClassFieldName, boolean useSingleField) {
         String fieldName = psiField.getName();
