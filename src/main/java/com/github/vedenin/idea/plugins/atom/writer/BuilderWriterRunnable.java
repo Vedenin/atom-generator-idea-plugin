@@ -14,7 +14,8 @@ public class BuilderWriterRunnable implements Runnable {
 
     @Override
     public void run() {
-        Application application = psiHelper.getApplication();
-        application.runWriteAction(new BuilderWriterComputable(builderPsiClassBuilder, context));
+        psiHelper.getApplication().runWriteAction(
+                new BuilderWriterComputable(builderPsiClassBuilder, context)
+        );
     }
 }

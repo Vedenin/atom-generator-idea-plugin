@@ -15,10 +15,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static com.github.vedenin.idea.plugins.atom.factory.MemberChooserDialogFactory.TITLE;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MemberChooserDialogFactoryTest {
+    private static final String TITLE = "Select Fields to Be Available in Builder";
 
     @Spy private MemberChooserDialogFactory memberChooserDialogFactory;
     @Mock private Project project;

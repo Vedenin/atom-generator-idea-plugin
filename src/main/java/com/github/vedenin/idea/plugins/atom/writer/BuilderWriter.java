@@ -12,8 +12,14 @@ public class BuilderWriter {
     private final PsiHelper psiHelper;
 
     public void writeBuilder(BuilderContext context) {
-        CommandProcessor commandProcessor = psiHelper.getCommandProcessor();
-        commandProcessor.executeCommand(context.getProject(),
-                new BuilderWriterRunnable(builderPsiClassBuilder, context), CREATE_BUILDER_STRING, this);
+        psiHelper.getCommandProcessor()
+                .executeCommand(
+                            context.getProject(),
+                            new BuilderWriterRunnable(builderPsiClassBuilder,
+                            context
+                        ),
+                        CREATE_BUILDER_STRING,
+                        this
+                );
     }
 }

@@ -6,8 +6,7 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 
 public class MemberChooserDialogFactory {
-
-    static final String TITLE = "Select Fields to Be Available in Builder";
+    private static final String TITLE = "Select Fields to Be Available in Builder";
 
     public MemberChooser<PsiElementClassMember> getMemberChooserDialog(List<PsiElementClassMember> elements, Project project) {
         PsiElementClassMember[] psiElementClassMembers = elements.toArray(new PsiElementClassMember[elements.size()]);

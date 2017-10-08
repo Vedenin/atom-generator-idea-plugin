@@ -10,11 +10,10 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class CreateBuilderDialogFactory {
-
-    static final String BUILDER_SUFFIX = "Builder";
-    static final String METHOD_PREFIX = "with";
-
+    private static final String BUILDER_SUFFIX = "Builder";
+    private static final String METHOD_PREFIX = "with";
     private static final String DIALOG_NAME = "CreateBuilder";
+
     private final PsiHelper psiHelper;
     private final ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory;
     private final GuiHelper guiHelper;

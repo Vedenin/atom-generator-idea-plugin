@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.action;
 
+import com.intellij.openapi.util.IconLoader;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,6 +9,9 @@ import javax.swing.Icon;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GoToBuilderAdditionalActionTest {
+    private static final String TEXT = "Create New Builder...";
+    private static final Icon ICON = IconLoader.getIcon("/actions/intentionBulb.png");
+
 
     private GoToBuilderAdditionalAction action;
 
@@ -22,7 +26,7 @@ public class GoToBuilderAdditionalActionTest {
         String result = action.getText();
 
         // then
-        assertThat(result).isEqualTo(GoToBuilderAdditionalAction.TEXT);
+        assertThat(result).isEqualTo(TEXT);
     }
 
     @Test
@@ -31,7 +35,7 @@ public class GoToBuilderAdditionalActionTest {
         Icon result = action.getIcon();
 
         // then
-        assertThat(result).isEqualTo(GoToBuilderAdditionalAction.ICON);
+        assertThat(result).isEqualTo(ICON);
     }
 
     @Test

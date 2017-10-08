@@ -27,7 +27,6 @@ import com.github.vedenin.idea.plugins.atom.verifier.PsiFieldVerifier;
 public class GoToBuilderAction extends EditorAction {
 
     private static GoToBuilderActionHandler goToBuilderActionHandler;
-
     private static PicoContainerAtom picoContainer = PicoContainerAtom.createDefault();
 
     static {

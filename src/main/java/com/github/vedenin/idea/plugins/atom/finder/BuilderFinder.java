@@ -5,8 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class BuilderFinder {
-
-    static final String SEARCH_PATTERN = "Builder";
+    private static final String SEARCH_PATTERN = "Builder";
     private static final String EMPTY_STRING = "";
 
     private final ClassFinder classFinder;

@@ -18,7 +18,8 @@ import static org.mockito.Mockito.verify;
 public class BuilderFinderTest {
 
     private static final String CLASS_NAME = "SomeClass";
-    private static final String BUILDER_NAME = CLASS_NAME + BuilderFinder.SEARCH_PATTERN;
+    private static final String SEARCH_PATTERN = "Builder";
+    private static final String BUILDER_NAME = CLASS_NAME + SEARCH_PATTERN;
 
     @InjectMocks private BuilderFinder builderFinder;
     @Mock private ClassFinder classFinder;
@@ -109,7 +110,7 @@ public class BuilderFinderTest {
         // given
         PsiClass innerClass = mock(PsiClass.class);
         PsiClass[] innerClasses = {innerClass};
-        given(innerClass.getName()).willReturn(BuilderFinder.SEARCH_PATTERN);
+        given(innerClass.getName()).willReturn(SEARCH_PATTERN);
         given(psiClass.getAllInnerClasses()).willReturn(innerClasses);
 
         // when
