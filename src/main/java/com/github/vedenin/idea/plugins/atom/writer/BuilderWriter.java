@@ -5,9 +5,10 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.github.vedenin.idea.plugins.atom.psi.PsiHelper;
 import lombok.AllArgsConstructor;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.WRITER_CREATE_BUILDER_STRING;
+
 @AllArgsConstructor
 public class BuilderWriter {
-    static final String CREATE_BUILDER_STRING = "Create Builder";
     private final BuilderPsiClassBuilder builderPsiClassBuilder;
     private final PsiHelper psiHelper;
 
@@ -18,7 +19,7 @@ public class BuilderWriter {
                             new BuilderWriterRunnable(builderPsiClassBuilder,
                             context
                         ),
-                        CREATE_BUILDER_STRING,
+                        WRITER_CREATE_BUILDER_STRING,
                         this
                 );
     }

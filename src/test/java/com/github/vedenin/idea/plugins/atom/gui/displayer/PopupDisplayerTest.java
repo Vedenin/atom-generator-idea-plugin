@@ -12,6 +12,7 @@ import com.github.vedenin.idea.plugins.atom.factory.PopupChooserBuilderFactory;
 
 import javax.swing.JList;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.POPUP_TITLE;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +32,7 @@ public class PopupDisplayerTest {
     public void shouldInvokePopupChooserBuilder() {
         // given
         given(popupChooserBuilderFactory.getPopupChooserBuilder(list)).willReturn(popupChooserBuilder);
-        given(popupChooserBuilder.setTitle(PopupDisplayer.TITLE)).willReturn(popupChooserBuilder);
+        given(popupChooserBuilder.setTitle(POPUP_TITLE)).willReturn(popupChooserBuilder);
         given(popupChooserBuilder.setItemChoosenCallback(runnable)).willReturn(popupChooserBuilder);
         given(popupChooserBuilder.setMovable(true)).willReturn(popupChooserBuilder);
         given(popupChooserBuilder.createPopup()).willReturn(popup);

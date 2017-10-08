@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.WRITER_CREATE_BUILDER_STRING;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Matchers.isA;
@@ -21,7 +22,6 @@ public class BuilderWriterTest {
 
     @InjectMocks private BuilderWriter builderWriter;
     @Mock private PsiHelper psiHelper;
-    @Mock private BuilderPsiClassBuilder builderPsiClassBuilder;
     @Mock private BuilderContext context;
     @Mock private Project project;
 
@@ -36,6 +36,7 @@ public class BuilderWriterTest {
         builderWriter.writeBuilder(context);
 
         // then
-        verify(commandProcessor).executeCommand(eq(project), isA(BuilderWriterRunnable.class), eq(BuilderWriter.CREATE_BUILDER_STRING), eq(builderWriter));
+        verify(commandProcessor).executeCommand(eq(project), isA(BuilderWriterRunnable.class),
+                eq(WRITER_CREATE_BUILDER_STRING), eq(builderWriter));
     }
 }

@@ -5,19 +5,18 @@ import com.intellij.openapi.util.IconLoader;
 
 import javax.swing.Icon;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.ICON_ADDITIONAL_ACTION;
+import static com.github.vedenin.idea.plugins.atom.Constants.TEXT_ADDITIONAL_ACTION;
+
 public class GoToBuilderAdditionalAction implements GotoTargetHandler.AdditionalAction {
-
-    static final String TEXT = "Create New Builder...";
-    static final Icon ICON = IconLoader.getIcon("/actions/intentionBulb.png");
-
     @Override
     public String getText() {
-        return TEXT;
+        return TEXT_ADDITIONAL_ACTION;
     }
 
     @Override
     public Icon getIcon() {
-        return ICON;
+        return ICON_ADDITIONAL_ACTION;
     }
 
     @Override

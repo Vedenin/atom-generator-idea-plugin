@@ -7,16 +7,16 @@ import lombok.RequiredArgsConstructor;
 
 import javax.swing.JList;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.POPUP_TITLE;
+
 @RequiredArgsConstructor
 public class PopupDisplayer {
-
-    static final String TITLE = "Builder not found 1 ";
 
     private final PopupChooserBuilderFactory popupChooserBuilderFactory;
 
     public void displayPopupChooser(Editor editor, JList list, Runnable runnable) {
         PopupChooserBuilder builder = popupChooserBuilderFactory.getPopupChooserBuilder(list);
-        builder.setTitle(TITLE).
+        builder.setTitle(POPUP_TITLE).
                 setItemChoosenCallback(runnable).
                 setMovable(true).
                 createPopup().showInBestPositionFor(editor);

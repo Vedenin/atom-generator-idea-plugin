@@ -12,7 +12,7 @@
     <version>0.5.0</version>
     <change-notes>
         <![CDATA[
-           version 0.5.0
+           version 0.5.2
            <br/>
            <ul>
            <li>Init version</li>
@@ -32,7 +32,7 @@
     </project-components>
 
     <actions>
-        <action id="GoToBuilder" class="GoToBuilderAction"
+        <action id="GoToBuilder" class="com.github.vedenin.idea.plugins.atom.action.GoToBuilderAction"
                 text="Builder" description="Generates Builder">
             <add-to-group group-id="GoToCodeGroup" anchor="after" relative-to-action="GotoTest"/>
             <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>

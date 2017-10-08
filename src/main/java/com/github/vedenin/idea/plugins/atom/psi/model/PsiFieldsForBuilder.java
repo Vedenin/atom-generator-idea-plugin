@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @RequiredArgsConstructor
 public class PsiFieldsForBuilder {
-
     private final List<PsiField> fieldsForSetters;
     private final List<PsiField> fieldsForConstructor;
     private final List<PsiField> allSelectedFields;

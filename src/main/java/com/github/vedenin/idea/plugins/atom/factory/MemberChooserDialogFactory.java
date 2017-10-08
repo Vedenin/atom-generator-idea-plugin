@@ -5,15 +5,15 @@ import com.intellij.openapi.project.Project;
 
 import java.util.List;
 
-public class MemberChooserDialogFactory {
-    private static final String TITLE = "Select Fields to Be Available in Builder";
+import static com.github.vedenin.idea.plugins.atom.Constants.MEMBER_CHOOSE_DIALOG_TITLE;
 
+public class MemberChooserDialogFactory {
     public MemberChooser<PsiElementClassMember> getMemberChooserDialog(List<PsiElementClassMember> elements, Project project) {
         PsiElementClassMember[] psiElementClassMembers = elements.toArray(new PsiElementClassMember[elements.size()]);
         MemberChooser<PsiElementClassMember> memberChooserDialog = createNewInstance(project, psiElementClassMembers);
         memberChooserDialog.setCopyJavadocVisible(false);
         memberChooserDialog.selectElements(psiElementClassMembers);
-        memberChooserDialog.setTitle(TITLE);
+        memberChooserDialog.setTitle(MEMBER_CHOOSE_DIALOG_TITLE);
         return memberChooserDialog;
     }
 

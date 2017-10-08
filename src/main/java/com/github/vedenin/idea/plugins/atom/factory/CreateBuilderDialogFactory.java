@@ -8,18 +8,19 @@ import com.github.vedenin.idea.plugins.atom.gui.helper.GuiHelper;
 import com.github.vedenin.idea.plugins.atom.psi.PsiHelper;
 import lombok.RequiredArgsConstructor;
 
+import static com.github.vedenin.idea.plugins.atom.Constants.BUILDER_DIALOG_METHOD_PREFIX;
+import static com.github.vedenin.idea.plugins.atom.Constants.BUILDER_DIALOG_NAME;
+import static com.github.vedenin.idea.plugins.atom.Constants.BUILDER_SUFFIX;
+
 @RequiredArgsConstructor
 public class CreateBuilderDialogFactory {
-    private static final String BUILDER_SUFFIX = "Builder";
-    private static final String METHOD_PREFIX = "with";
-    private static final String DIALOG_NAME = "CreateBuilder";
-
     private final PsiHelper psiHelper;
     private final ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory;
     private final GuiHelper guiHelper;
 
     public CreateBuilderDialog createBuilderDialog(PsiClass sourceClass, Project project, PsiPackage srcPackage) {
-        return new CreateBuilderDialog(project, DIALOG_NAME, sourceClass, sourceClass.getName() + BUILDER_SUFFIX, METHOD_PREFIX, srcPackage, psiHelper, guiHelper,
+        return new CreateBuilderDialog(project, BUILDER_DIALOG_NAME, sourceClass, sourceClass.getName()
+                + BUILDER_SUFFIX, BUILDER_DIALOG_METHOD_PREFIX, srcPackage, psiHelper, guiHelper,
                 referenceEditorComboWithBrowseButtonFactory);
     }
 }
