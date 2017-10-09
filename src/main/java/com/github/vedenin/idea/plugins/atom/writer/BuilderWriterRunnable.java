@@ -1,6 +1,5 @@
 package com.github.vedenin.idea.plugins.atom.writer;
 
-import com.intellij.openapi.application.Application;
 import com.github.vedenin.idea.plugins.atom.psi.BuilderPsiClassBuilder;
 import com.github.vedenin.idea.plugins.atom.psi.PsiHelper;
 import lombok.RequiredArgsConstructor;

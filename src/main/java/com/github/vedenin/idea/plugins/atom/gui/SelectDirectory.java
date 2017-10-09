@@ -1,11 +1,9 @@
 package com.github.vedenin.idea.plugins.atom.gui;
 
-import com.github.vedenin.idea.plugins.atom.gui.helper.GuiHelper;
+import com.github.vedenin.atoms.openapi.MessagesAtom;
 import com.github.vedenin.idea.plugins.atom.psi.PsiHelper;
-import com.intellij.CommonBundle;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.util.IncorrectOperationException;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +13,7 @@ public class SelectDirectory implements Runnable {
 
     private final CreateBuilderDialog createBuilderDialog;
     private final PsiHelper psiHelper;
-    private final GuiHelper guiHelper;
+    private final MessagesAtom messagesAtom = MessagesAtom.getAtom();
     private final Project project;
     private final Module module;
     private final String packageName;
@@ -35,7 +33,7 @@ public class SelectDirectory implements Runnable {
             errorString = e.getMessage();
         }
         if (errorString != null) {
-            guiHelper.showMessageDialog(project, errorString, CommonBundle.getErrorTitle(), Messages.getErrorIcon());
+            messagesAtom.showErrorInMessageDialog(project, errorString);
         }
     }
 }

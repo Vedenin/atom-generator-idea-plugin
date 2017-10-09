@@ -1,4 +1,4 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
 import com.github.vedenin.atom.annotations.Atom;
 import com.github.vedenin.atom.annotations.BoilerPlate;
@@ -9,7 +9,10 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.TreeMultimap;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
@@ -112,7 +115,7 @@ public class MultimapAtom<K, V> implements Iterable<MultimapAtom.Entry<K,V>> {
     }
 
     @BoilerPlate
-    private MultimapAtom(Multimap map) {
+    private MultimapAtom(Multimap<K, V> map) {
         this.map = map;
     }
 
@@ -122,7 +125,7 @@ public class MultimapAtom<K, V> implements Iterable<MultimapAtom.Entry<K,V>> {
     }
 
     @BoilerPlate
-    public static <K, V> MultimapAtom<K, V> createTreeMap() {
+    public static <K extends Comparable, V extends Comparable> MultimapAtom<K, V> createTreeMap() {
         return new MultimapAtom<>(TreeMultimap.create());
     }
 

@@ -1,9 +1,9 @@
 package com.github.vedenin.idea.plugins.atom.gui.helper;
 
+import com.github.vedenin.atoms.openapi.MessagesAtom;
 import com.intellij.codeInsight.CodeInsightUtil;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 
@@ -11,10 +11,6 @@ import javax.swing.Icon;
 
 
 public class GuiHelper {
-
-    public void showMessageDialog(Project project, String message, String title, Icon icon) {
-        Messages.showMessageDialog(project, message, title, icon);
-    }
 
     public void includeCurrentPlaceAsChangePlace(Project project) {
         IdeDocumentHistory.getInstance(project).includeCurrentPlaceAsChangePlace();

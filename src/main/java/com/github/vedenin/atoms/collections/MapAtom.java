@@ -1,9 +1,17 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
-import com.github.vedenin.atom.annotations.*;
-import com.github.vedenin.thirdpartylib.collections.exceptions.CollectionAtomException;
+import com.github.vedenin.atom.annotations.Atom;
+import com.github.vedenin.atom.annotations.AtomException;
+import com.github.vedenin.atom.annotations.BoilerPlate;
+import com.github.vedenin.atom.annotations.Isotopes;
+import com.github.vedenin.atom.annotations.Molecule;
+import com.github.vedenin.atoms.collections.exceptions.CollectionAtomException;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;

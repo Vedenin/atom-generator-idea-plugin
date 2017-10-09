@@ -255,7 +255,7 @@ public class CreateBuilderDialog extends DialogWrapper {
             throw new IllegalStateException("Cannot find module for class " + sourceClass.getName());
         }
         if (!isInnerBuilder()) {
-            SelectDirectory selectDirectory = new SelectDirectory(this, psiHelper, guiHelper, project, module, getPackageName(), getClassName());
+            SelectDirectory selectDirectory = new SelectDirectory(this, psiHelper, project, module, getPackageName(), getClassName());
             executeCommand(selectDirectory);
         }
         callSuper();

@@ -1,4 +1,4 @@
-package com.github.vedenin.thirdpartylib.collections.exceptions;
+package com.github.vedenin.atoms.collections.exceptions;
 
 /**
  * Exception from Collection atoms

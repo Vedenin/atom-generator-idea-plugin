@@ -1,12 +1,20 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
 import com.github.vedenin.atom.annotations.Atom;
 import com.github.vedenin.atom.annotations.BoilerPlate;
 import com.github.vedenin.atom.annotations.Isotopes;
 import com.github.vedenin.atom.annotations.Molecule;
 import com.google.common.collect.Sets;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -24,6 +32,7 @@ import java.util.stream.Stream;
 public class SetAtom<K> implements CollectionAtom<K> {
     private final Set<K> set;
 
+    @NotNull
     @Override
     public Iterator<K> iterator() {
         return set.iterator();
@@ -142,7 +151,7 @@ public class SetAtom<K> implements CollectionAtom<K> {
 
     @BoilerPlate
     public static <K> SetAtom<K> create(ListAtom<K> list) {
-        return new SetAtom<K>(new HashSet<>(list.getOriginal()));
+        return new SetAtom<>(new HashSet<>(list.getOriginal()));
     }
 
     @BoilerPlate
@@ -157,7 +166,7 @@ public class SetAtom<K> implements CollectionAtom<K> {
 
     @BoilerPlate
     public static <K> SetAtom<K> create(K... args) {
-        return SetAtom.create(new HashSet<K>(Arrays.asList(args)));
+        return SetAtom.create(new HashSet<>(Arrays.asList(args)));
     }
 
     @BoilerPlate

@@ -1,4 +1,4 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
 import java.util.Collection;
 

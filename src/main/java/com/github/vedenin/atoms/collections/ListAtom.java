@@ -1,11 +1,17 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
 import com.github.vedenin.atom.annotations.Atom;
 import com.github.vedenin.atom.annotations.BoilerPlate;
 import com.github.vedenin.atom.annotations.Molecule;
 import com.google.common.collect.Lists;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -22,6 +28,7 @@ import java.util.stream.Stream;
 public class ListAtom<K> implements CollectionAtom<K> {
     private final List<K> list;
 
+    @NotNull
     @Override
     public Iterator<K> iterator() {
         return list.iterator();

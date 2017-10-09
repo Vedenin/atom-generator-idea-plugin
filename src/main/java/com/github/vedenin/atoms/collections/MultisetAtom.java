@@ -1,4 +1,4 @@
-package com.github.vedenin.thirdpartylib.collections;
+package com.github.vedenin.atoms.collections;
 
 import com.github.vedenin.atom.annotations.Atom;
 import com.github.vedenin.atom.annotations.BoilerPlate;
