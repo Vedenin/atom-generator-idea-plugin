@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.action;
 
+import com.github.vedenin.atoms.collections.ListAtom;
 import com.github.vedenin.atoms.pico.PicoContainerAtom;
 import com.github.vedenin.idea.plugins.atom.factory.CreateBuilderDialogFactory;
 import com.github.vedenin.idea.plugins.atom.finder.ClassFinder;
@@ -25,37 +26,35 @@ import com.github.vedenin.idea.plugins.atom.verifier.PsiFieldVerifier;
 
 
 public class GoToBuilderAction extends EditorAction {
-
-    private static GoToBuilderActionHandler goToBuilderActionHandler;
-    private static PicoContainerAtom picoContainer = PicoContainerAtom.createDefault();
-
-    static {
-        picoContainer.registerComponentImplementation(PsiHelper.class);
-        picoContainer.registerComponentImplementation(BuilderVerifier.class);
-        picoContainer.registerComponentImplementation(ClassFinder.class);
-        picoContainer.registerComponentImplementation(BuilderPsiClassBuilder.class);
-        picoContainer.registerComponentImplementation(BuilderFinder.class);
-        picoContainer.registerComponentImplementation(PopupChooserBuilderFactory.class);
-        picoContainer.registerComponentImplementation(PopupDisplayer.class);
-        picoContainer.registerComponentImplementation(PopupListFactory.class);
-        picoContainer.registerComponentImplementation(PsiManagerFactory.class);
-        picoContainer.registerComponentImplementation(CreateBuilderDialogFactory.class);
-        picoContainer.registerComponentImplementation(GuiHelper.class);
-        picoContainer.registerComponentImplementation(PsiFieldVerifier.class);
-        picoContainer.registerComponentImplementation(PsiElementClassMemberFactory.class);
-        picoContainer.registerComponentImplementation(ReferenceEditorComboWithBrowseButtonFactory.class);
-        picoContainer.registerComponentImplementation(MemberChooserDialogFactory.class);
-        picoContainer.registerComponentImplementation(BuilderWriter.class);
-        picoContainer.registerComponentImplementation(PsiFieldSelector.class);
-        picoContainer.registerComponentImplementation(PsiFieldsForBuilderFactory.class);
-        picoContainer.registerComponentImplementation(GoToBuilderActionHandler.class);
-        picoContainer.registerComponentImplementation(DisplayChoosersRunnable.class);
-
-        goToBuilderActionHandler = picoContainer.getComponentInstanceOfType(GoToBuilderActionHandler.class);
+    protected GoToBuilderAction() {
+        super(getGoToBuilderActionHandler());
     }
 
-
-    protected GoToBuilderAction() {
-        super(goToBuilderActionHandler);
+    private static GoToBuilderActionHandler getGoToBuilderActionHandler() {
+        PicoContainerAtom picoContainer = PicoContainerAtom.createAtom(
+                ListAtom.create(
+                        PsiHelper.class,
+                        BuilderVerifier.class,
+                        ClassFinder.class,
+                        BuilderPsiClassBuilder.class,
+                        BuilderFinder.class,
+                        PopupChooserBuilderFactory.class,
+                        PopupDisplayer.class,
+                        PopupListFactory.class,
+                        PsiManagerFactory.class,
+                        CreateBuilderDialogFactory.class,
+                        GuiHelper.class,
+                        PsiFieldVerifier.class,
+                        PsiElementClassMemberFactory.class,
+                        ReferenceEditorComboWithBrowseButtonFactory.class,
+                        MemberChooserDialogFactory.class,
+                        BuilderWriter.class,
+                        PsiFieldSelector.class,
+                        PsiFieldsForBuilderFactory.class,
+                        GoToBuilderActionHandler.class,
+                        DisplayChoosersRunnable.class
+                )
+        );
+        return picoContainer.getComponent(GoToBuilderActionHandler.class);
     }
 }
