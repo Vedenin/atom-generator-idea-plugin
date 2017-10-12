@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
@@ -9,7 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 
 import static org.apache.commons.lang.StringUtils.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +21,7 @@ public class MethodCreatorTest {
 
     private MethodCreator methodCreator;
     @Mock private MethodNameCreator methodNameCreator;
-    @Mock private CodeStyleSettings codeStyleSettings;
+    @Mock private CodeStyleSettingsManagerAtom codeStyleSettings;
     @Mock private PsiElementFactory elementFactory;
     @Mock private PsiField psiField;
     @Mock private PsiType type;

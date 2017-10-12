@@ -8,6 +8,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.TreeMultimap;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -170,6 +171,7 @@ public class MultimapAtom<K, V> implements Iterable<MultimapAtom.Entry<K,V>> {
         return builder.toString();
     }
 
+    @NotNull
     @Override
     public Iterator<Entry<K, V>> iterator() {
         return new Iterator<Entry<K, V>>() {

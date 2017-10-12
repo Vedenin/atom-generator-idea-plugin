@@ -58,7 +58,7 @@ public class CreateBuilderDialogTest {
                 project, packageName, CreateBuilderDialog.RECENTS_KEY)).willReturn(referenceEditorComboWithBrowseButton);
 
         createBuilderDialog = new CreateBuilderDialog(
-                project, title, sourceClass, className, methodPrefix, targetPackage, psiHelper, guiHelper, referenceEditorComboWithBrowseButtonFactory);
+                project, title, sourceClass, className, methodPrefix, targetPackage, psiHelper, referenceEditorComboWithBrowseButtonFactory);
     }
 
 

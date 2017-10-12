@@ -1,17 +1,17 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiParameterList;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 
 @RequiredArgsConstructor
 public class ButMethodCreator {
 
-    private CodeStyleSettings codeStyleSettings = new CodeStyleSettings();
+    private CodeStyleSettingsManagerAtom codeStyleSettings = CodeStyleSettingsManagerAtom.createAtom();
     private final PsiElementFactory elementFactory;
 
     public PsiMethod butMethod(String builderClassName, PsiClass builderClass, PsiClass srcClass, String srcClassFieldName, boolean useSingleField) {

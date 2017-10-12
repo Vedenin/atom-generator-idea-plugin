@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.verifier;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
@@ -12,7 +13,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 
 import static org.apache.commons.lang.StringUtils.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,7 +36,7 @@ public class PsiFieldVerifierTest {
     @Mock private PsiType psiType;
     @Mock private PsiMethod method;
     @Mock private PsiModifierList modifierList;
-    @Mock private CodeStyleSettings settings;
+    @Mock private CodeStyleSettingsManagerAtom settings;
 
     private String name;
 

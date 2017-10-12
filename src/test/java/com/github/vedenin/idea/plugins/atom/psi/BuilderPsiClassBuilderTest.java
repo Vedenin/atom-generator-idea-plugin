@@ -1,7 +1,7 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.github.vedenin.idea.plugins.atom.psi.model.PsiFieldsForBuilder;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 import com.github.vedenin.idea.plugins.atom.writer.BuilderContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaDirectoryService;
@@ -36,7 +36,7 @@ import static org.springframework.test.util.ReflectionTestUtils.setField;
 public class BuilderPsiClassBuilderTest {
 
     @InjectMocks private BuilderPsiClassBuilder psiClassBuilder;
-    @Mock private CodeStyleSettings settings;
+    @Mock private CodeStyleSettingsManagerAtom settings;
     @Mock private PsiHelper psiHelper;
     @Mock private ButMethodCreator butMethodCreator;
     @Mock private MethodCreator methodCreator;

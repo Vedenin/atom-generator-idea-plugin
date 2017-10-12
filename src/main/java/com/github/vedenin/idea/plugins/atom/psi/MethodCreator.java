@@ -1,15 +1,15 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class MethodCreator {
 
-    private CodeStyleSettings codeStyleSettings = new CodeStyleSettings();
+    private CodeStyleSettingsManagerAtom codeStyleSettings = CodeStyleSettingsManagerAtom.createAtom();
     private MethodNameCreator methodNameCreator = new MethodNameCreator();
     private final PsiElementFactory elementFactory;
     private final String builderClassName;

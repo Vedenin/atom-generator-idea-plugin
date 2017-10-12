@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFactory;
 import com.intellij.psi.PsiMethod;
@@ -11,7 +12,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,7 +23,7 @@ public class ButMethodCreatorTest {
 
     @InjectMocks private ButMethodCreator butMethodCreator;
     @Mock private PsiElementFactory psiElementFactory;
-    @Mock private CodeStyleSettings settings;
+    @Mock private CodeStyleSettingsManagerAtom settings;
     @Mock private PsiClass builderClass;
     @Mock private PsiClass srcClass;
     @Mock private PsiMethod method1;

@@ -46,7 +46,6 @@ public class CreateBuilderDialog extends DialogWrapper {
     private static final int WIDTH = 40;
 
     private PsiHelper psiHelper;
-    private GuiHelper guiHelper;
     private Project project;
     private PsiDirectory targetDirectory;
     private PsiClass sourceClass;
@@ -64,11 +63,9 @@ public class CreateBuilderDialog extends DialogWrapper {
                                String methodPrefix,
                                PsiPackage targetPackage,
                                PsiHelper psiHelper,
-                               GuiHelper guiHelper,
                                ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory) {
         super(project, true);
         this.psiHelper = psiHelper;
-        this.guiHelper = guiHelper;
         this.project = project;
         this.sourceClass = sourceClass;
         targetClassNameField = new JTextField(targetClassName);

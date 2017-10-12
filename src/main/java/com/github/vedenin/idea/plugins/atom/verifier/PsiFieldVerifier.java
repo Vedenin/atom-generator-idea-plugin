@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.verifier;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
@@ -7,7 +8,6 @@ import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
 import org.apache.commons.lang.WordUtils;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 
 import static org.apache.commons.lang.StringUtils.EMPTY;
 
@@ -17,7 +17,7 @@ public class PsiFieldVerifier {
     static final String SET_PREFIX = "set";
     static final String GET_PREFIX = "get";
 
-    private CodeStyleSettings codeStyleSettings = new CodeStyleSettings();
+    private CodeStyleSettingsManagerAtom codeStyleSettings = CodeStyleSettingsManagerAtom.createAtom();
 
     public boolean isSetInConstructor(PsiField psiField, PsiClass psiClass) {
         boolean result = false;

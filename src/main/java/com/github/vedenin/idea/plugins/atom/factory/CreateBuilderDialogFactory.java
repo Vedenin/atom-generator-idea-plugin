@@ -16,11 +16,10 @@ import static com.github.vedenin.idea.plugins.atom.Constants.BUILDER_SUFFIX;
 public class CreateBuilderDialogFactory {
     private final PsiHelper psiHelper;
     private final ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory;
-    private final GuiHelper guiHelper;
 
     public CreateBuilderDialog createBuilderDialog(PsiClass sourceClass, Project project, PsiPackage srcPackage) {
         return new CreateBuilderDialog(project, BUILDER_DIALOG_NAME, sourceClass, sourceClass.getName()
-                + BUILDER_SUFFIX, BUILDER_DIALOG_METHOD_PREFIX, srcPackage, psiHelper, guiHelper,
+                + BUILDER_SUFFIX, BUILDER_DIALOG_METHOD_PREFIX, srcPackage, psiHelper,
                 referenceEditorComboWithBrowseButtonFactory);
     }
 }

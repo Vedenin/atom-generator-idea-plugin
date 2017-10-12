@@ -1,5 +1,6 @@
 package com.github.vedenin.idea.plugins.atom.psi;
 
+import com.github.vedenin.atoms.psi.CodeStyleSettingsManagerAtom;
 import com.intellij.psi.JavaDirectoryService;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
@@ -8,7 +9,6 @@ import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifierList;
 import org.apache.commons.lang.StringUtils;
-import com.github.vedenin.idea.plugins.atom.settings.CodeStyleSettings;
 import com.github.vedenin.idea.plugins.atom.writer.BuilderContext;
 
 import java.util.Collection;
@@ -31,7 +31,7 @@ public class BuilderPsiClassBuilder {
 
     private PsiHelper psiHelper = new PsiHelper();
     private PsiFieldsModifier psiFieldsModifier = new PsiFieldsModifier();
-    private CodeStyleSettings codeStyleSettings = new CodeStyleSettings();
+    private CodeStyleSettingsManagerAtom codeStyleSettings = CodeStyleSettingsManagerAtom.createAtom();
     private ButMethodCreator butMethodCreator;
     private MethodCreator methodCreator;
 
